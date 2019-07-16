@@ -1,0 +1,93 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.Vocabulary",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The VOCABULARY resource includes a list of the Vocabularies collected from various sources or created de novo by the OMOP community. This reference resource is populated with a single instance for each Vocabulary source and includes a descriptive name and other associated attributes for the Vocabulary.",
+    "propertyTypes" : [ {
+      "key" : "vocabulary_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A unique identifier for each Vocabulary, such as ICD9CM, SNOMED, Visit.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "vocabulary_name",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The name describing the vocabulary, for example \"International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 1 and 2 (NCHS)\" etc.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Name"
+        }
+      }
+    }, {
+      "key" : "vocabulary_reference",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "External reference to documentation or available download of the about the vocabulary.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Reference"
+        }
+      }
+    }, {
+      "key" : "vocabulary_version",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Version of the Vocabulary as indicated in the source.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Version"
+        }
+      }
+    }, {
+      "key" : "vocabulary_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key that refers to a standard concept identifier in the CONCEPT colklection for the Vocabulary the VOCABULARY instance belongs to.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Concept"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}

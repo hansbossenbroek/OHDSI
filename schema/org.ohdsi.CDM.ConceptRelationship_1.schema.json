@@ -1,0 +1,110 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.ConceptRelationship",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The CONCEPT_RELATIONSHIP resource contains instances that define direct relationships between any two Concepts and the nature or type of the relationship. Each type of a relationship is defined in the RELATIONSHIP resource.",
+    "propertyTypes" : [ {
+      "key" : "concept_id_1",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to a Concept in the CONCEPT collection associated with the relationship. Relationships are directional, and this field represents the source concept designation.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ConceptId1"
+        }
+      }
+    }, {
+      "key" : "concept_id_2",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to a Concept in the CONCEPT collection associated with the relationship. Relationships are directional, and this field represents the destination concept designation.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ConceptId2"
+        }
+      }
+    }, {
+      "key" : "relationship_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A unique identifier to the type or nature of the Relationship as defined in the RELATIONSHIP collection.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "valid_start_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The date when the instance of the Concept Relationship is first recorded.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDate"
+        }
+      }
+    }, {
+      "key" : "valid_end_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The date when the Concept Relationship became invalid because it was deleted or superseded (updated) by a new relationship. Default value is 31-Dec-2099.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDate"
+        }
+      }
+    }, {
+      "key" : "invalid_reason",
+      "type" : {
+        "@type" : "enum",
+        "name" : "InvalidReason value",
+        "values" : [ "D", "U", "NULL" ]
+      },
+      "identifying" : false,
+      "defaultValue" : "D",
+      "required" : false,
+      "description" : "Reason the relationship was invalidated. Possible values are 'D' (deleted), 'U' (replaced with an update) or NULL when valid_end_date has the default value.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "InvalidReason"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.DrugStrength",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The DRUG_STRENGTH collection contains structured content about the amount or concentration and associated units of a specific ingredient contained within a particular drug product. This collection is supplemental information to support standardized analysis of drug utilization.",
+    "propertyTypes" : [ {
+      "key" : "drug_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the Concept in the CONCEPT collection representing the identifier for Branded Drug or Clinical Drug Concept.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ConceptId"
+        }
+      }
+    }, {
+      "key" : "ingredient_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the Concept in the CONCEPT collection, representing the identifier for drug Ingredient Concept contained within the drug product.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "IngredientId"
+        }
+      }
+    }, {
+      "key" : "amount_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "FLOAT"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The numeric value associated with the amount of active ingredient contained within the product.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Amount"
+        }
+      }
+    }, {
+      "key" : "amount_unit_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the Concept in the CONCEPT collection representing the identifier for the Unit for the absolute amount of active ingredient.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "AmountUnit"
+        }
+      }
+    }, {
+      "key" : "numerator_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "FLOAT"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The numeric value associated with the concentration of the active ingredient contained in the product.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Numerator"
+        }
+      }
+    }, {
+      "key" : "numerator_unit_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the Concept in the CONCEPT collection representing the identifier for the numerator Unit for the concentration of active ingredient.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "NumeratorUnitConceptId"
+        }
+      }
+    }, {
+      "key" : "denominator_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "FLOAT"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The amount of total liquid (or other divisible product, such as ointment, gel, spray, etc.).",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Denominator"
+        }
+      }
+    }, {
+      "key" : "denominator_unit_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the Concept in the CONCEPT collection representing the identifier for the denominator Unit for the concentration of active ingredient.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "DenominatorUnitConceptId"
+        }
+      }
+    }, {
+      "key" : "box_size",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The number of units of Clinical of Branded Drug, or Quantified Clinical or Branded Drug contained in a box as dispensed to the patient.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "BoxSize"
+        }
+      }
+    }, {
+      "key" : "valid_start_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The date when the Concept was first recorded. The default value is 1-Jan-1970.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDate"
+        }
+      }
+    }, {
+      "key" : "valid_end_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The date when the concept became invalid because it was deleted or superseded (updated) by a new Concept. The default value is 31-Dec-2099.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDate"
+        }
+      }
+    }, {
+      "key" : "invalid_reason",
+      "type" : {
+        "@type" : "enum",
+        "name" : "InvalidReason value",
+        "values" : [ "D", "U", "NULL" ]
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Reason the concept was invalidated. Possible values are 'D' (deleted), 'U' (replaced with an update) or NULL when valid_end_date has the default value.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "InvalidReason"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}

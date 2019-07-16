@@ -1,0 +1,61 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.ConceptSynonym",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The CONCEPT_SYNONYM resource is used to store alternate names and descriptions for Concepts.",
+    "propertyTypes" : [ {
+      "key" : "concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the Concept in the CONCEPT collection.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "concept_synonym_name",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The alternative name for the Concept.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SynonymName"
+        }
+      }
+    }, {
+      "key" : "language_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to a Concept representing the language.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ConceptLanguage"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}
