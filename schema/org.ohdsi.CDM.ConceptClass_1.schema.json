@@ -6,7 +6,7 @@
     "version" : 1,
     "draft" : true,
     "precededBy" : null,
-    "description" : "The CONCEPT_CLASS resource is a reference resource, which includes a list of the classifications used to differentiate Concepts within a given Vocabulary. This reference collection is populated with a single instance for each Concept Class",
+    "description" : "The CONCEPT_CLASS collection is a reference resource, which includes a list of the classifications used to differentiate Concepts within a given Vocabulary. This reference collection is populated with a single instance for each Concept Class",
     "propertyTypes" : [ {
       "key" : "concept_class_id",
       "type" : {

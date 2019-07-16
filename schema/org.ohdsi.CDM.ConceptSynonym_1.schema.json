@@ -6,7 +6,7 @@
     "version" : 1,
     "draft" : true,
     "precededBy" : null,
-    "description" : "The CONCEPT_SYNONYM resource is used to store alternate names and descriptions for Concepts.",
+    "description" : "The CONCEPT_SYNONYM collection is used to store alternate names and descriptions for Concepts.",
     "propertyTypes" : [ {
       "key" : "concept_id",
       "type" : {

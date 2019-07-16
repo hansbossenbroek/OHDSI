@@ -6,7 +6,7 @@
     "version" : 1,
     "draft" : true,
     "precededBy" : null,
-    "description" : "The CONCEPT_RELATIONSHIP resource contains instances that define direct relationships between any two Concepts and the nature or type of the relationship. Each type of a relationship is defined in the RELATIONSHIP resource.",
+    "description" : "The CONCEPT_RELATIONSHIP collection contains instances that define direct relationships between any two Concepts and the nature or type of the relationship. Each type of a relationship is defined in the RELATIONSHIP resource.",
     "propertyTypes" : [ {
       "key" : "concept_id_1",
       "type" : {
