@@ -1,0 +1,125 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.Metadata",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The METADATA collection contains metadata information about a dataset that has been transformed to the OMOP Common Data Model.",
+    "propertyTypes" : [ {
+      "key" : "metadata_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key that refers to a Standard Metadata Concept identifier in the Standardized Vocabularies.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ConceptId"
+        }
+      }
+    }, {
+      "key" : "metadata_type_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key that refers to a Standard Type Concept identifier in the Standardized Vocabularies",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "TypeConceptId"
+        }
+      }
+    }, {
+      "key" : "name",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The name of the Concept stored in metadata_concept_id or a description of the data being stored.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Name"
+        }
+      }
+    }, {
+      "key" : "value_as_string",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The metadata value stored as a string.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StringValue"
+        }
+      }
+    }, {
+      "key" : "value_as_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to a metadata value stored as a Concept ID.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ConceptIdValue"
+        }
+      }
+    }, {
+      "key" : "metadata_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The date associated with the metadata.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Date"
+        }
+      }
+    }, {
+      "key" : "metadata_datetime",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "TIMESTAMP"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The date and time associated with the metadata.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Datetime"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}
