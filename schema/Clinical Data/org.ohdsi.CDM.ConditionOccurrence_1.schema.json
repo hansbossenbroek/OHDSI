@@ -11,7 +11,7 @@
       "key" : "condition_occurrence_id",
       "type" : {
         "@type" : "primitive",
-        "primitive" : "LONG"
+        "primitive" : "INTEGER"
       },
       "identifying" : true,
       "defaultValue" : null,
@@ -27,7 +27,7 @@
       "key" : "person_id",
       "type" : {
         "@type" : "primitive",
-        "primitive" : "LONG"
+        "primitive" : "INTEGER"
       },
       "identifying" : false,
       "defaultValue" : null,
