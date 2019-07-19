@@ -1,0 +1,189 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.Location",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The LOCATION collection represents a generic way to capture physical location or address information of Persons and Care Sites.",
+    "propertyTypes" : [ {
+      "key" : "location_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A unique identifier for each geographic location.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "address_1",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The address field 1, typically used for the street address, as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Address1"
+        }
+      }
+    }, {
+      "key" : "address_2",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The address field 2, typically used for additional detail such as buildings, suites, floors, as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Address2"
+        }
+      }
+    }, {
+      "key" : "city",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The city field as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "City"
+        }
+      }
+    }, {
+      "key" : "state",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The state field as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "State"
+        }
+      }
+    }, {
+      "key" : "zip",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The zip or postal code.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Zip"
+        }
+      }
+    }, {
+      "key" : "county",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The county.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Country"
+        }
+      }
+    }, {
+      "key" : "country",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The country.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Country"
+        }
+      }
+    }, {
+      "key" : "location_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The verbatim information that is used to uniquely identify the location as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "LocationSource"
+        }
+      }
+    }, {
+      "key" : "latitude",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "FLOAT"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The geocoded latitude.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Latitude"
+        }
+      }
+    }, {
+      "key" : "longitude",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "FLOAT"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The geocoded longitude",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Longitude"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}

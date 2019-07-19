@@ -1,0 +1,109 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.LocationHistory",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The LOCATION_HISTORY collection stores relationships between Persons or Care Sites and geographic locations over time.",
+    "propertyTypes" : [ {
+      "key" : "location_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the location collection.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "relationship_type_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The type of relationship between location and entity.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "RelationshipTypeConcept"
+        }
+      }
+    }, {
+      "key" : "domain_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The domain of the entity that is related to the location. Either PERSON, PROVIDER, or CARE_SITE.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Domain"
+        }
+      }
+    }, {
+      "key" : "entity_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The unique identifier for the entity. References either person_id, provider_id, or care_site_id, depending on domain_id.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Entity"
+        }
+      }
+    }, {
+      "key" : "start_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The date the relationship started.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDate"
+        }
+      }
+    }, {
+      "key" : "end_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : null,
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDate"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}

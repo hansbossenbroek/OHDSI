@@ -1,0 +1,221 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.Provider",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The PROVIDER collection contains a list of uniquely identified healthcare providers. These are individuals providing hands-on healthcare to patients, such as physicians, nurses, midwives, physical therapists etc.",
+    "propertyTypes" : [ {
+      "key" : "provider_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A unique identifier for each Provider.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "provider_name",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A description of the Provider.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Name"
+        }
+      }
+    }, {
+      "key" : "npi",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The National Provider Identifier (NPI) of the provider.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "NPI"
+        }
+      }
+    }, {
+      "key" : "dea",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The Drug Enforcement Administration (DEA) number of the provider.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "DEA"
+        }
+      }
+    }, {
+      "key" : "specialty_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to a Standard Specialty Concept ID in the Standardized Vocabularies.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SpecialtyConcept"
+        }
+      }
+    }, {
+      "key" : "care_site_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the main Care Site where the provider is practicing.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "CareSite"
+        }
+      }
+    }, {
+      "key" : "year_of_birth",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The year of birth of the Provider.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "YearOfBrth"
+        }
+      }
+    }, {
+      "key" : "gender_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : null,
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "GenderConcept"
+        }
+      }
+    }, {
+      "key" : "provider_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The identifier used for the Provider in the source data, stored here for reference.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ProviderSource"
+        }
+      }
+    }, {
+      "key" : "specialty_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The source code for the Provider specialty as it appears in the source data, stored here for reference.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SpecialtySource"
+        }
+      }
+    }, {
+      "key" : "specialty_source_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to a Concept that refers to the code used in the source.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SpecialtySourceConcept"
+        }
+      }
+    }, {
+      "key" : "gender_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The gender code for the Provider as it appears in the source data, stored here for reference.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "GenderSource"
+        }
+      }
+    }, {
+      "key" : "gender_source_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to a Concept that refers to the code used in the source.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "GenderSourceConcept"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}

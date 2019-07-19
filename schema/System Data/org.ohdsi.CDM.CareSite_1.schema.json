@@ -1,0 +1,109 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.CareSite",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The CARE_SITE collection contains a list of uniquely identified institutional (physical or organizational) units where healthcare delivery is practiced (offices, wards, hospitals, clinics, etc.).",
+    "propertyTypes" : [ {
+      "key" : "care_site_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A unique identifier for each Care Site.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "care_site_name",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The verbatim description or name of the Care Site as in data source",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Name"
+        }
+      }
+    }, {
+      "key" : "place_of_service_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key that refers to a Place of Service Concept ID in the Standardized Vocabularies.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "PlaceOfServiceConcept"
+        }
+      }
+    }, {
+      "key" : "location_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the geographic Location in the LOCATION collection, where the detailed address information is stored.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Location"
+        }
+      }
+    }, {
+      "key" : "care_site_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The identifier for the Care Site in the source data, stored here for reference.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "CareSiteSource"
+        }
+      }
+    }, {
+      "key" : "place_of_service_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The source code for the Place of Service as it appears in the source data, stored here for reference.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "PlaceOfServiceSource"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}
