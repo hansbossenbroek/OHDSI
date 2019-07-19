@@ -18,6 +18,11 @@
       "required" : true,
       "description" : "A unique identifier for each person.",
       "extensions" : {
+        "PrivacyExtension" : {
+          "@type" : "privacy",
+          "personallyIdentifiable" : true,
+          "privacySensitive" : true
+        },
         "PropertyLabelExtension" : {
           "@type" : "label",
           "label" : "Id"

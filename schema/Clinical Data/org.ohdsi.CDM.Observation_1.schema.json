@@ -34,6 +34,11 @@
       "required" : true,
       "description" : "A foreign key identifier to the Person about whom the observation was recorded. The demographic details of that Person are stored in the PERSON collection.",
       "extensions" : {
+        "PrivacyExtension" : {
+          "@type" : "privacy",
+          "personallyIdentifiable" : true,
+          "privacySensitive" : false
+        },
         "PropertyLabelExtension" : {
           "@type" : "label",
           "label" : "Person"

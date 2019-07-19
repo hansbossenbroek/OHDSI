@@ -34,6 +34,11 @@
       "required" : true,
       "description" : "A foreign key identifier to the Person who is subjected to the Drug during the Drug Era. The demographic details of that Person are stored in the PERSON collection.",
       "extensions" : {
+        "PrivacyExtension" : {
+          "@type" : "privacy",
+          "personallyIdentifiable" : true,
+          "privacySensitive" : false
+        },
         "PropertyLabelExtension" : {
           "@type" : "label",
           "label" : "Person"

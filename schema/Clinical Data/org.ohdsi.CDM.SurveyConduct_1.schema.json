@@ -34,6 +34,11 @@
       "required" : true,
       "description" : "A foreign key identifier to the Person in the PERSON collection about whom the survey was completed.",
       "extensions" : {
+        "PrivacyExtension" : {
+          "@type" : "privacy",
+          "personallyIdentifiable" : true,
+          "privacySensitive" : false
+        },
         "PropertyLabelExtension" : {
           "@type" : "label",
           "label" : "Person"
