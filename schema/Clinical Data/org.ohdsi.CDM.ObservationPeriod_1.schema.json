@@ -1,0 +1,93 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.ObservationPeriod",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The OBSERVATION_PERIOD collection contains instances which uniquely define the spans of time for which a Person is at-risk to have clinical events recorded within the source systems, even if no events in fact are recorded (healthy patient with no healthcare interactions).",
+    "propertyTypes" : [ {
+      "key" : "observation_period_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A unique identifier for each observation period.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "person_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key identifier to the person for whom the observation period is defined. The demographic details of that person are stored in the person table.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Person"
+        }
+      }
+    }, {
+      "key" : "observation_period_start_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The start date of the observation period for which data are available from the data source.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDate"
+        }
+      }
+    }, {
+      "key" : "observation_period_end_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The end date of the observation period for which data are available from the data source.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDate"
+        }
+      }
+    }, {
+      "key" : "period_type_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key identifier to the predefined concept in the Standardized Vocabularies reflecting the source of the observation period information, belonging to the 'Obs Period Type' vocabulary",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "PeriodTypeConcept"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}

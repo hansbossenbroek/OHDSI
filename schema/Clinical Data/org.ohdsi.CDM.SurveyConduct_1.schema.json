@@ -1,0 +1,397 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.SurveyConduct",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The SURVEY_CONDUCT collection is used to store an instance of a completed survey or questionnaire. It captures details of the individual questionnaire such as who completed it, when it was completed and to which patient treatment or visit it relates to (if any). Each SURVEY has a SURVEY_CONCEPT_ID, a concept in the CONCEPT collection identifying the questionnaire e.g. EQ5D, VR12, SF12. Each questionnaire should exist in the CONCEPT collection. Each SURVEY can be optionally related to a specific patient visit in order to link it both to the visit during which it was completed and any subsequent visit where treatment was assigned based on the patient's responses.",
+    "propertyTypes" : [ {
+      "key" : "survey_conduct_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "Unique identifier for each completed survey.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SurveyConduct"
+        }
+      }
+    }, {
+      "key" : "person_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key identifier to the Person in the PERSON collection about whom the survey was completed.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Person"
+        }
+      }
+    }, {
+      "key" : "survey_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined Concept identifier in the Standardized Vocabularies reflecting the name and identity of the survey.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SurveyConcept"
+        }
+      }
+    }, {
+      "key" : "survey_start_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Date on which the survey was started.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDate"
+        }
+      }
+    }, {
+      "key" : "survey_start_datetime",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "TIMESTAMP"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Date and time the survey was started.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDatetime"
+        }
+      }
+    }, {
+      "key" : "survey_end_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Date on which the survey was completed.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDate"
+        }
+      }
+    }, {
+      "key" : "survey_end_datetime",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "TIMESTAMP"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "Date and time the survey was completed.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDatetime"
+        }
+      }
+    }, {
+      "key" : "provider_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the provider in the PROVIDER collection who was associated with the survey completion.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Provider"
+        }
+      }
+    }, {
+      "key" : "assisted_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined Concept identifier in the Standardized Vocabularies indicating whether the survey was completed with assistance.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "AssistedConcept"
+        }
+      }
+    }, {
+      "key" : "respondent_type_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined Concept identifier in the Standardized Vocabularies reflecting the respondent type. Example: Research Associate, Patient.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "RespondentTypeConcept"
+        }
+      }
+    }, {
+      "key" : "timing_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined Concept identifier in the Standardized Vocabularies that refers to a certain timing. Example: 3 month follow-up, 6 month follow-up.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "TimingConcept"
+        }
+      }
+    }, {
+      "key" : "collection_method_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined Concept identifier in the Standardized Vocabularies reflecting the data collection method (e.g. Paper, Telephone, Electronic Questionnaire).",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "CollectionMethodConcept"
+        }
+      }
+    }, {
+      "key" : "assisted_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Source value representing whether patient required assistance to complete the survey. Example: “Completed without assistance”, ”Completed with assistance”.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "AssistedSource"
+        }
+      }
+    }, {
+      "key" : "respondent_type_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Source code representing role of person who completed the survey.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "RespondentTypeSource"
+        }
+      }
+    }, {
+      "key" : "timing_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Text string representing the timing of the survey. Example: Baseline, 6-month follow-up.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "TimingSource"
+        }
+      }
+    }, {
+      "key" : "collection_method_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The collection method as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "CollectionMethodSource"
+        }
+      }
+    }, {
+      "key" : "survey_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The survey name/title as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SurveySource"
+        }
+      }
+    }, {
+      "key" : "survey_source_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to a predefined Concept that refers to the code for the survey name/title used in the source.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SurveySourceConcept"
+        }
+      }
+    }, {
+      "key" : "survey_source_identifier",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Unique identifier for each completed survey in source system.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SurveySourceIdentifier"
+        }
+      }
+    }, {
+      "key" : "validated_survey_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined Concept identifier in the Standardized Vocabularies reflecting the validation status of the survey.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ValidatedSurveyConcept"
+        }
+      }
+    }, {
+      "key" : "validated_survey_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Source value representing the validation status of the survey.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ValidatedSurveySource"
+        }
+      }
+    }, {
+      "key" : "survey_version_number",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "Version number of the questionnaire or survey used.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "SurveyVersion"
+        }
+      }
+    }, {
+      "key" : "visit_occurrence_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the VISIT_OCCURRENCE collection during which the survey was completed",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitOccurrence"
+        }
+      }
+    }, {
+      "key" : "response_visit_occurrence_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the visit in the VISIT_OCCURRENCE collection during which treatment was carried out that relates to this survey.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "ResponseVisitOccurrence"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}

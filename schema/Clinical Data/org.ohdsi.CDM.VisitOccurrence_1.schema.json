@@ -1,0 +1,285 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.VisitOccurrence",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The VISIT_OCCURRENCE collection contains the spans of time a Person continuously receives medical services from one or more providers at a Care Site in a given setting within the health care system. Visits are classified into 4 settings: outpatient care, inpatient confinement, emergency room, and long-term care. Persons may transition between these settings over the course of an episode of care (for example, treatment of a disease onset).",
+    "propertyTypes" : [ {
+      "key" : "visit_occurrence_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A unique identifier for each Person's visit or encounter at a healthcare provider.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "person_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key identifier to the Person for whom the visit is recorded. The demographic details of that Person are stored in the PERSON collection.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Person"
+        }
+      }
+    }, {
+      "key" : "visit_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key that refers to a Concept identifier in the Standardized Vocabularies belonging to the 'Visit' Domain.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitConcept"
+        }
+      }
+    }, {
+      "key" : "visit_start_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The start date of the visit.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDate"
+        }
+      }
+    }, {
+      "key" : "visit_start_datetime",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "TIMESTAMP"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The date and time when the visit started.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDatetime"
+        }
+      }
+    }, {
+      "key" : "visit_end_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The end date of the visit. If this is a one-day visit the end date should match the start date.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDate"
+        }
+      }
+    }, {
+      "key" : "visit_end_datetime",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "TIMESTAMP"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The date and time when the visit ended.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDatetime"
+        }
+      }
+    }, {
+      "key" : "visit_type_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined Concept identifier in the Standardized Vocabularies reflecting the type of source data from which the visit record is derived from belonging to the 'Visit Type' vocabulary.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitTypeConcept"
+        }
+      }
+    }, {
+      "key" : "provider_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the provider in the provider collection who was associated with the visit.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Provider"
+        }
+      }
+    }, {
+      "key" : "care_site_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the care site in the care site collection that was visited.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "CareSite"
+        }
+      }
+    }, {
+      "key" : "visit_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The source code for the visit as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitSource"
+        }
+      }
+    }, {
+      "key" : "visit_source_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to a Concept that refers to the code used in the source.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitSourceConcept"
+        }
+      }
+    }, {
+      "key" : "admitted_from_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined concept in the Visit Domain reflecting where the patient was admitted from.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "AdmittedFromConcept"
+        }
+      }
+    }, {
+      "key" : "admitted_from_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The source code for where the patient was admitted from as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "AdmittedFromSource"
+        }
+      }
+    }, {
+      "key" : "discharge_to_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined Concept in the Visit Domain reflecting where the patient was discharged to (discharge disposition).",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "DischargeToConcept"
+        }
+      }
+    }, {
+      "key" : "discharge_to_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The source code for the discharge disposition as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "DischargeToSource"
+        }
+      }
+    }, {
+      "key" : "preceding_visit_occurrence_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the VISIT_OCCURRENCE collection of the visit immediately preceding this visit",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "PrecedingVisitOccurrence"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "serializationVersion" : 1,
+  "resourceType" : {
+    "@type" : "resource-type",
+    "identifier" : "org.ohdsi.CDM.VisitDetail",
+    "version" : 1,
+    "draft" : true,
+    "precededBy" : null,
+    "description" : "The VISIT_DETAIL collection is an optional collection used to represent details of each instance in the parent visit_occurrence collection. For every instance in the visit_occurrence collection there may be 0 or more instances in the visit_detail collection with a 1:n relationship where n may be 0. The visit_detail collection is structurally very similar to the visit_occurrence collection and belongs to the similar domain as the visit.",
+    "propertyTypes" : [ {
+      "key" : "visit_detail_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : true,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A unique identifier for each Person's visit or encounter at a healthcare provider.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Id"
+        }
+      }
+    }, {
+      "key" : "person_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key identifier to the Person for whom the visit is recorded. The demographic details of that Person are stored in the PERSON resourcetype.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Person"
+        }
+      }
+    }, {
+      "key" : "visit_detail_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key that refers to a visit Concept identifier in the Standardized Vocabularies belonging to the 'Visit' Vocabulary.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitDetailConcept"
+        }
+      }
+    }, {
+      "key" : "visit_detail_start_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The start date of the visit.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDate"
+        }
+      }
+    }, {
+      "key" : "visit_detail_start_datetime",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "TIMESTAMP"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The date and time of the visit started.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "StartDatetime"
+        }
+      }
+    }, {
+      "key" : "visit_detail_end_date",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "DATE"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The end date of the visit. If this is a one-day visit the end date should match the start date.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDate"
+        }
+      }
+    }, {
+      "key" : "visit_detail_end_datetime",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "TIMESTAMP"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "The date and time of the visit end.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "EndDatetime"
+        }
+      }
+    }, {
+      "key" : "visit_detail_type_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined Concept identifier in the Standardized Vocabularies reflecting the type of source data from which the visit record is derived belonging to the 'Visit Type' vocabulary.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "DetailTypeConcept"
+        }
+      }
+    }, {
+      "key" : "provider_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the provider in the provider table who was associated with the visit.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "Provider"
+        }
+      }
+    }, {
+      "key" : "care_site_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the care site in the care site table that was visited.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "CareSite"
+        }
+      }
+    }, {
+      "key" : "visit_detail_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The source code for the visit as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitDetailSource"
+        }
+      }
+    }, {
+      "key" : "visit_detail_source_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to a Concept that refers to the code used in the source.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitDetailSourceConcept"
+        }
+      }
+    }, {
+      "key" : "admitted_from_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The source code for the admitting source as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "AdmittedFromSource"
+        }
+      }
+    }, {
+      "key" : "admitted_from_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined concept in the 'Place of Service' Vocabulary reflecting the admitting source for a visit.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "AdmittedFromConcept"
+        }
+      }
+    }, {
+      "key" : "discharge_to_source_value",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "STRING"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "The source code for the discharge disposition as it appears in the source data.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "DischargeToSource"
+        }
+      }
+    }, {
+      "key" : "discharge_to_concept_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key to the predefined concept in the 'Place of Service' Vocabulary reflecting the discharge disposition for a visit.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "DischargeToConcept"
+        }
+      }
+    }, {
+      "key" : "preceding_visit_detail_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the VISIT_DETAIL collection of the visit immediately preceding this visit.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "PrecedingVisitDetail"
+        }
+      }
+    }, {
+      "key" : "visit_detail_parent_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : false,
+      "description" : "A foreign key to the VISIT_OCCURRENCE collection instance to represent the parent Visit this Visit Detail belongs to.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitDetailParent"
+        }
+      }
+    }, {
+      "key" : "visit_occurrence_id",
+      "type" : {
+        "@type" : "primitive",
+        "primitive" : "INTEGER"
+      },
+      "identifying" : false,
+      "defaultValue" : null,
+      "required" : true,
+      "description" : "A foreign key that refers to the instance in the VISIT_OCCURRENCE collection. This is a required field, because for every visit_detail is a child of visit_occurrence and cannot exist without a corresponding parent instance in visit_occurrence.",
+      "extensions" : {
+        "PropertyLabelExtension" : {
+          "@type" : "label",
+          "label" : "VisitOccurrence"
+        }
+      }
+    } ],
+    "extensions" : null
+  }
+}
